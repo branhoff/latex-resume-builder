@@ -1,0 +1,31 @@
+FROM debian:bookworm-slim
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    pandoc \
+    texlive-latex-base \
+    texlive-latex-extra \
+    texlive-fonts-recommended \
+    git \
+    vim \
+    gcc \
+    sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+ARG USERNAME=devuser
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && echo "$USERNAME ALL=(ALL) NOPASSWD: /usr/bin/apt-get, /usr/bin/apt" > /etc/sudoers.d/$USERNAME
+
+USER $USERNAME
+WORKDIR /home/$USERNAME
+
+RUN mkdir -p /home/$USERNAME/workspace
+
+WORKDIR /home/devuser/workspace
+
+CMD ["/bin/bash"]

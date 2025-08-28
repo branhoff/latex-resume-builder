@@ -1,0 +1,328 @@
+% LaTeX Resume Template - Master Resume Example
+% This is a comprehensive master resume showing how to structure and format
+% a professional resume using LaTeX. Use this as your source of truth, then
+% create tailored versions for specific job applications.
+
+% CUSTOMIZATION TIPS:
+% 
+% 1. FONTS: Change \usepackage{charter} to:
+%    - \usepackage{times} for Times Roman
+%    - \usepackage{palatino} for Palatino
+%
+% 2. MARGINS: Adjust margins in \usepackage[margin=0.5in, top=0.5in]{geometry}
+%    - Use margin=0.4in for more space
+%    - Use margin=0.75in for more conservative spacing
+%
+% 3. SPACING: Fine-tune these values:
+%    - \titlespacing{\section}{0pt}{3pt plus 1pt minus 1pt}{0pt}
+%    - \vspace{-0.5em} after job titles
+%    - itemsep=0pt in itemize environments
+%
+% 4. COLORS: Add \usepackage{xcolor} and use:
+%    - \textcolor{blue}{text} for colored text
+%    - \colorbox{lightgray}{text} for highlighted backgrounds
+%
+% 5. SECTIONS TO REMOVE FOR TAILORED VERSIONS:
+%    - Publications (unless applying for research roles)
+%    - Some older work experience
+%    - Projects not relevant to target role
+%    - Volunteer work (unless specifically relevant)
+%    - Some technical skills (focus on job requirements)
+%
+% 6. BULLETS: Change label=-- to:
+%    - label=$\bullet$ for solid bullets
+%    - label=$\circ$ for hollow circles
+%    - label=$\triangleright$ for triangles
+
+\documentclass[a4paper,10pt]{article}           % a4paper sets page size, 10pt sets base font size
+\usepackage[utf8]{inputenc}                     % Allows UTF-8 characters (accented letters, etc.)
+\usepackage[margin=0.5in, top=0.5in]{geometry}  % Sets page margins - adjust these for tighter/looser spacing
+\usepackage{enumitem}                           % Enhanced list formatting - customize bullets, spacing, indentation
+\usepackage{hyperref}                           % Makes email and website links clickable
+\usepackage{titlesec}                           % Customize section heading formatting and spacing
+\usepackage{parskip}                            % Controls paragraph spacing
+\usepackage{sectsty}                            % Additional section styling options
+\usepackage{charter}                            % Charter font - professional serif font like times, etc.
+
+% Global spacing settings - fine-tune these to adjust overall document density
+\setlength{\parindent}{0pt}            % No paragraph indentation (flush left)
+\setlength{\parskip}{0pt}              % No extra space between paragraphs
+
+% Section title spacing - controls white space around section headers
+% Format: \titlespacing{command}{left spacing}{before spacing}{after spacing}
+\titlespacing{\section}{0pt}{3pt plus 1pt minus 1pt}{0pt}      % Main sections (EXPERIENCE, EDUCATION)
+\titlespacing{\subsection}{0pt}{2pt plus 1pt minus 1pt}{0pt}   % Job titles, project names
+
+% Section font sizes - keep consistent with body text for compact professional look
+\sectionfont{\normalsize}              % Main section headers same size as body text
+\subsectionfont{\normalsize}           % Job titles same size as body text
+
+\pagenumbering{gobble}                 % Remove page numbers - standard for resumes
+
+\begin{document}
+
+    % HEADER SECTION - Your name and contact information
+    \begin{center}
+        \textbf{\Large ALEX J. EXAMPLESON}  % \Large makes name bigger, \textbf makes it bold
+
+        \vspace{0.1cm}                    % Small vertical space between name and contact info
+        % \href creates clickable links - format: \href{actual_url}{display_text}
+        \href{mailto:alex.exampleson@email.com}{alex.exampleson@email.com} | \href{https://alexexampleson.dev}{https://alexexampleson.dev} | \href{https://linkedin.com/in/alexjexampleson}{LinkedIn} | \href{https://github.com/alexjexampleson}{GitHub} | 555.123.4567
+    \end{center}
+
+    % Decorative horizontal lines - creates visual separation
+    \hrule
+    \vspace{0.1cm}
+    \hrule
+
+    \vspace{0.2cm}
+
+    \section*{PROFESSIONAL SUMMARY}      % \section* creates unnumbered section
+    \vspace{-0.5em}                      % Negative space pulls content up closer to header
+    \hrule                               % Horizontal line under section header
+    \vspace{0.3cm}                       % Space between line and content
+    Senior Full Stack Software Engineer with 8+ years of experience building scalable web applications and distributed systems.
+    Expertise in modern JavaScript frameworks, cloud architecture, and DevOps practices.
+    Proven track record of leading technical initiatives, mentoring junior developers, and delivering high-impact features for millions of users.
+    Strong advocate for clean code, test-driven development, and engineering best practices.
+    Currently pursuing advanced certifications in cloud architecture and machine learning.
+
+    \section*{CORE TECHNICAL SKILLS}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+    % itemize environment creates bulleted lists
+    % leftmargin controls how far bullets are indented from left margin
+    % itemsep controls vertical space between bullet points
+    % label=-- changes bullet style to dashes instead of dots
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        % \textbf makes text bold, | creates visual separators between technologies
+        \item \textbf{Frontend Technologies:} React $|$ Vue.js $|$ Angular $|$ TypeScript $|$ JavaScript (ES6+) $|$ HTML5 $|$ CSS3 $|$ SASS/SCSS
+        \item \textbf{Backend Technologies:} Node.js $|$ Python $|$ Java $|$ Go $|$ PHP $|$ C\# $|$ Ruby
+        \item \textbf{Frameworks \& Libraries:} Express.js $|$ Next.js $|$ Django $|$ Flask $|$ Spring Boot $|$ .NET Core $|$ Ruby on Rails
+        \item \textbf{Databases:} PostgreSQL $|$ MySQL $|$ MongoDB $|$ Redis $|$ Elasticsearch $|$ DynamoDB $|$ Cassandra
+        \item \textbf{Cloud Platforms:} AWS (EC2, S3, Lambda, RDS, CloudFormation) $|$ Google Cloud Platform $|$ Microsoft Azure
+        \item \textbf{DevOps \& Tools:} Docker $|$ Kubernetes $|$ Terraform $|$ Jenkins $|$ GitHub Actions $|$ GitLab CI/CD
+        \item \textbf{Monitoring \& Observability:} DataDog $|$ New Relic $|$ Prometheus $|$ Grafana $|$ Splunk $|$ ELK Stack
+        \item \textbf{Testing Frameworks:} Jest $|$ Cypress $|$ Selenium $|$ PyTest $|$ JUnit $|$ Mocha $|$ PHPUnit
+        \item \textbf{Message Queues:} Apache Kafka $|$ RabbitMQ $|$ AWS SQS $|$ Redis Pub/Sub
+        \item \textbf{Development Practices:} Agile/Scrum $|$ TDD/BDD $|$ Code Reviews $|$ Pair Programming $|$ Microservices Architecture
+    \end{itemize}
+
+    \section*{WORK EXPERIENCE}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+
+    % JOB ENTRY FORMAT
+    % \subsection* creates job title header
+    % \hfill pushes the date to the right side of the line
+    % \textit makes the date italic
+    \subsection*{Senior Full Stack Engineer – TechFlow Solutions; San Francisco, CA \hfill \textit{Jan 2023 – current}}
+    \vspace{-0.5em}                      % Reduces space between job title and bullets
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Architect and lead development of next-generation SaaS platform serving 500K+ active users using React, Node.js, and PostgreSQL
+        \item Designed and implemented microservices architecture reducing application response time by 60\% and improving system scalability
+        \item Led migration from monolithic architecture to containerized microservices using Docker and Kubernetes, reducing deployment time from 2 hours to 15 minutes
+        \item Implemented comprehensive monitoring and alerting system using DataDog and Prometheus, reducing mean time to resolution by 75\%
+        \item Mentored team of 5 junior developers, conducting code reviews and establishing engineering best practices
+        \item Collaborated with product managers and designers to define technical requirements and deliver features ahead of schedule
+        \item Optimized database queries and implemented caching strategies with Redis, improving API response times by 40\%
+        \item Established automated CI/CD pipeline using GitHub Actions, enabling daily deployments with zero downtime
+        \item Led security audit and implemented OAuth 2.0 authentication, ensuring SOC 2 Type II compliance
+        \item Presented technical architecture decisions to C-level executives and secured budget for infrastructure improvements
+    \end{itemize}
+
+    \subsection*{Full Stack Developer – DataViz Inc; Austin, TX \hfill \textit{Mar 2021 – Dec 2022}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Developed and maintained customer-facing analytics dashboard using Vue.js, D3.js, and Python Flask backend
+        \item Built real-time data processing pipeline using Apache Kafka and Elasticsearch, handling 1M+ events per day
+        \item Implemented automated testing suite achieving 90\%+ code coverage using Jest, Cypress, and PyTest
+        \item Optimized application performance through code splitting and lazy loading, reducing initial load time by 50\%
+        \item Collaborated with data science team to integrate machine learning models into production applications
+        \item Designed and developed RESTful APIs serving data to mobile applications and third-party integrations
+        \item Participated in on-call rotation and incident response, maintaining 99.9\% application uptime
+        \item Conducted technical interviews and contributed to hiring decisions for engineering team expansion
+        \item Led weekly engineering knowledge sharing sessions and contributed to internal technical blog
+        \item Implemented feature flags and A/B testing framework enabling data-driven product decisions
+        \item Migrated legacy PHP application to modern React/Node.js stack, reducing maintenance overhead by 40\%
+    \end{itemize}
+
+    \subsection*{Software Engineer – CloudFirst Technologies; Denver, CO \hfill \textit{Aug 2019 – Feb 2021}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Developed cloud-native applications using AWS services (Lambda, API Gateway, DynamoDB, S3)
+        \item Built serverless event-driven architecture processing financial transactions with sub-second response times
+        \item Implemented Infrastructure as Code using Terraform and CloudFormation for consistent environment management
+        \item Created automated deployment pipelines using AWS CodePipeline and CodeBuild reducing manual deployment errors by 95\%
+        \item Developed internal CLI tools using Go to streamline developer workflows and reduce operational overhead
+        \item Participated in agile development process with daily standups, sprint planning, and retrospectives
+        \item Contributed to open-source projects and represented company at local tech meetups
+        \item Implemented comprehensive logging and monitoring using CloudWatch and X-Ray for distributed tracing
+        \item Collaborated with security team to implement AWS IAM best practices and security scanning in CI/CD pipeline
+        \item Mentored intern developers and contributed to company coding standards documentation
+    \end{itemize}
+
+    \subsection*{Frontend Developer – Digital Marketing Solutions; Chicago, IL \hfill \textit{Jun 2018 – Jul 2019}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Developed responsive web applications using React and Redux for enterprise marketing automation platform
+        \item Collaborated with UX/UI designers to implement pixel-perfect, accessible user interfaces
+        \item Integrated third-party APIs including Google Analytics, Facebook Graph API, and Salesforce
+        \item Implemented state management solutions handling complex data flows for multi-step campaign builders
+        \item Optimized bundle size and application performance using webpack optimization techniques
+        \item Participated in user research sessions and gathered feedback to improve application usability
+        \item Developed reusable component library reducing development time for new features by 30\%
+        \item Implemented automated visual regression testing using Percy and Chromatic
+        \item Collaborated with backend team to design GraphQL schemas and optimize data fetching patterns
+        \item Contributed to documentation and onboarding materials for new team members
+    \end{itemize}
+
+    \subsection*{Junior Web Developer – StartupLab Inc; Portland, OR \hfill \textit{Sep 2017 – May 2018}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Built responsive websites and landing pages using HTML, CSS, JavaScript, and WordPress
+        \item Implemented Google Analytics tracking and conversion optimization for marketing campaigns
+        \item Developed custom WordPress themes and plugins for client projects
+        \item Collaborated with designers to translate mockups into functional web applications
+        \item Maintained and updated existing client websites and provided technical support
+        \item Participated in client meetings to gather requirements and provide technical recommendations
+        \item Implemented SEO best practices resulting in improved search engine rankings for client sites
+        \item Used version control (Git) and project management tools (Jira) for team collaboration
+    \end{itemize}
+
+    \subsection*{Web Development Intern – Creative Agency Co; Seattle, WA \hfill \textit{Jun 2017 – Aug 2017}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Assisted in development of client websites using HTML, CSS, and JavaScript
+        \item Created interactive prototypes and animations using CSS transitions and JavaScript libraries
+        \item Participated in daily standups and learned agile development methodologies
+        \item Conducted cross-browser testing and resolved compatibility issues
+        \item Contributed to company blog with technical articles about web development trends
+    \end{itemize}
+
+    \section*{KEY PROJECTS}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+
+    \subsection*{E-Commerce Platform Modernization \hfill \textit{TechFlow Solutions | 2023-2024}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Led complete rewrite of legacy e-commerce system handling \$50M+ annual revenue
+        \item Architected event-driven microservices architecture using Node.js, Kafka, and PostgreSQL
+        \item Implemented advanced caching strategies and CDN optimization reducing page load times by 70\%
+        \item Integrated payment processing (Stripe, PayPal) and inventory management systems
+        \item Delivered project 3 weeks ahead of schedule and 15\% under budget
+    \end{itemize}
+
+    \subsection*{Real-Time Analytics Dashboard \hfill \textit{DataViz Inc | 2021-2022}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Built real-time data visualization platform processing millions of data points daily
+        \item Implemented WebSocket connections for live data streaming and interactive charts using D3.js
+        \item Created customizable widget system allowing users to build personalized dashboards
+        \item Optimized rendering performance to handle 100K+ data points without UI lag
+        \item Platform now used by 50+ enterprise clients for business intelligence
+    \end{itemize}
+
+    \subsection*{Open Source Contributions \hfill \textit{Various Projects | 2018-present}}
+    \vspace{-0.5em}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Contributed to React ecosystem with 15+ merged PRs to popular libraries
+        \item Authored and maintained npm package for form validation with 10K+ monthly downloads
+        \item Regular contributor to Kubernetes documentation and community examples
+        \item Speaker at ReactConf 2023 on "Building Scalable Component Libraries"
+    \end{itemize}
+
+    \section*{EDUCATION \& CERTIFICATIONS}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item \textbf{Master of Science in Computer Science}, Stanford University; Stanford, CA; 2021
+        % Nested itemize for sub-bullets - use different label and more indentation
+        \begin{itemize}[leftmargin=0.4cm, itemsep=0pt, label=$\circ$]
+            \item Specialization in Distributed Systems and Machine Learning
+            \item Relevant Coursework: Advanced Algorithms, Database Systems, Computer Networks, AI/ML
+            \item Thesis: \textit{Optimizing Microservices Communication Patterns in Cloud Environments}
+            \item GPA: 3.8/4.0
+        \end{itemize}
+        \item \textbf{Bachelor of Science in Software Engineering}, University of Washington; Seattle, WA; 2017
+        \begin{itemize}[leftmargin=0.4cm, itemsep=0pt, label=$\circ$]
+            \item Minor in Mathematics and Business Administration
+            \item Summa Cum Laude, GPA: 3.9/4.0
+            \item President of Computer Science Student Association
+            \item Relevant Coursework: Data Structures, Software Design, Web Development, Mobile Development
+        \end{itemize}
+        % Professional certifications - show continuous learning and expertise
+        \item \textbf{AWS Certified Solutions Architect – Professional} (2024)
+        \item \textbf{AWS Certified Developer – Associate} (2023)
+        \item \textbf{Google Cloud Professional Cloud Architect} (2023)
+        \item \textbf{Kubernetes Administrator (CKA)} (2022)
+        \item \textbf{Certified Scrum Master (CSM)} (2021)
+    \end{itemize}
+
+    \section*{PUBLICATIONS \& PRESENTATIONS}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        % \textit for italic titles instead of quotation marks - cleaner professional look
+        \item \textit{Microservices at Scale: Lessons from Production} - TechCrunch Engineering Blog (2024)
+        \item \textit{Building Resilient Frontend Applications} - ReactConf 2023 (Keynote Speaker)
+        \item \textit{Event-Driven Architecture Patterns} - AWS re:Invent 2022 (Technical Session)
+        \item \textit{Modern JavaScript Testing Strategies} - JSConf 2021 (Workshop Leader)
+        \item Co-authored research paper: \textit{Performance Optimization in Distributed Web Applications} - ACM Computing Surveys (2021)
+    \end{itemize}
+
+    \section*{LEADERSHIP \& VOLUNTEER WORK}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item \textbf{Technical Mentor}, Girls Who Code Seattle Chapter \hfill \textit{(2020-present)}
+        \begin{itemize}[leftmargin=0.4cm, itemsep=0pt, label=$\circ$]
+            \item Mentor high school students learning programming and web development
+            \item Organized coding workshops and career guidance sessions
+            \item Helped 20+ students secure internships and college admissions
+        \end{itemize}
+        \item \textbf{Engineering Team Lead}, TechFlow Solutions \hfill \textit{(2023-present)}
+        \begin{itemize}[leftmargin=0.4cm, itemsep=0pt, label=$\circ$]
+            \item Manage team of 8 full-stack engineers across multiple product areas
+            \item Conduct performance reviews, career development planning, and technical mentoring
+            \item Established engineering culture focused on continuous learning and innovation
+        \end{itemize}
+        \item \textbf{Organizer}, Seattle JavaScript Meetup \hfill \textit{(2019-2022)}
+        \begin{itemize}[leftmargin=0.4cm, itemsep=0pt, label=$\circ$]
+            \item Organized monthly meetups with 200+ regular attendees
+            \item Coordinated speakers and venue partnerships with local tech companies
+            \item Built community platform connecting local developers and sharing resources
+        \end{itemize}
+    \end{itemize}
+
+    \section*{AWARDS \& RECOGNITION}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item Employee of the Year - TechFlow Solutions (2023)
+        \item Top Contributor Award - DataViz Inc (2022)
+        \item Innovation Award for E-Commerce Platform Architecture - TechFlow Solutions (2023)
+        \item Dean's List - University of Washington (2015-2017)
+        \item Outstanding Senior in Software Engineering - University of Washington (2017)
+    \end{itemize}
+
+    \section*{ADDITIONAL SKILLS \& INTERESTS}
+    \vspace{-0.5em}
+    \hrule
+    \vspace{0.3cm}
+    \begin{itemize}[leftmargin=0.2cm, itemsep=0pt, label=--]
+        \item \textbf{Languages:} English (Native), Spanish (Conversational), Mandarin (Basic)
+        \item \textbf{Interests:} Rock climbing, photography, contributing to open source, home automation projects
+        \item \textbf{Professional Memberships:} IEEE Computer Society, ACM, Seattle Tech Collective
+    \end{itemize}
+
+\end{document}
+
